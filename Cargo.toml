@@ -1,7 +1,7 @@
 [package]
 rust-version = "1.58.1"
-name = "mdns"
-version = "5.2.4"
+name = "oko-mdns"
+version = "5.2.5"
 authors = ["Dylan McKay <me@dylanmckay.io>"]
 edition = "2021"
 
@@ -48,11 +48,4 @@ tokio = { optional = true, version = "1.28", features = [
 ] }
 tokio-stream = { optional = true, version = "0.1.8", features = ["time"] }
 unicase = "2.6.0"
-
-[dependencies.multicast-socket]
-optional = true
-version = "0.5.3"
-git = "https://github.com/PhysicalGraph/multicast-socket"
-branch = "feat/tokio-async-socket"
-default-features = false
-features = ["tokio"]
+multicast-socket = { package = "oko-multicast-socket", optional = true, version = "0.5.3", default-features = false, features = ["tokio"] }
